@@ -1,4 +1,4 @@
-FROM postgres:9.1
+FROM postgres:9.4
 MAINTAINER Mike Dillon <mike@embody.org>
 
 ENV POSTGIS_MAJOR 2.1
@@ -13,3 +13,4 @@ RUN apt-get update \
 
 RUN mkdir -p /docker-entrypoint-initdb.d
 COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/postgis.sh
+COPY ./unaccent.sh /docker-entrypoint-initdb.d/unaccent.sh
