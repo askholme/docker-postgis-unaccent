@@ -12,5 +12,5 @@ RUN apt-get update \
       && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /docker-entrypoint-initdb.d
-COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/postgis.sh
-COPY ./unaccent.sh /docker-entrypoint-initdb.d/unaccent.sh
+COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/1_postgis.sh
+COPY ./unaccent.sh /docker-entrypoint-initdb.d/0_unaccent.sh
